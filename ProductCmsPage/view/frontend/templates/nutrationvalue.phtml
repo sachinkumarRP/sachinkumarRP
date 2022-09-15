@@ -1,0 +1,5 @@
+<?php
+/** @var $viewModel \RightpointAssignment\ProductCmsPage\ViewModel\Value*/
+$viewModel = $block->getViewModel();
+?>
+<strong><?= $block->escapeHtml($viewModel->getProductAttributeLabel()); ?>:</strong><?= $block->escapeHtml($viewModel->getProductAttribute()); ?>
