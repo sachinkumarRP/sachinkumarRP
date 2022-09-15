@@ -1,0 +1,24 @@
+type Query {
+    salesOrder (
+        id: Int @doc(description: "Id of the Sales Order")
+    ): SalesOrder @resolver(class: "RightpointAssignment\\SalesOrderDataById\\Model\\Resolver\\SalesOrderById") @doc(description: "The Sales Order query returns information about a Sales order")
+}
+type SalesOrder @doc(description: "Sales Order graphql gather Data of specific order information") {
+      entity_id: Int
+      ordered_qty: Int
+      customer_name:String
+      amount: String
+      coupon_code: String
+      shipping_method: String @doc(description: "Shipping method of Sales Order")
+      payment_methods:String
+      increment_id: String @doc(description: "Increment Id of Sales Order")
+       items: [Items] @doc(description: "An array of all items data of order") @resolver(class: "RightpointAssignment\\SalesOrderDataById\\Model\\Resolver\\Items")
+}
+type Items @doc(description: "AllCategory defines the customer name and other details"){
+          sku: String @doc(description: "SKU of Sales Order Item")
+          title: String @doc(description: "title of Sales Order Item")
+          price: Float @doc(description: "price of Sales Order Item")
+          qty: String
+}
+
+
