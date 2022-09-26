@@ -1,15 +1,6 @@
 <?xml version="1.0"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
-
-<!--        <referenceBlock name="order_additional_info">-->
-<!--            <block name="sales_custom_view" template="RightpointAssignment_SalesOrderAdminCustamization::order/view/view.phtml" ifconfig="sales/general/additional_detail">-->
-<!--                <arguments>-->
-<!--                    <argument name="view_model" xsi:type="object">RightpointAssignment\SalesOrderAdminCustamization\ViewModel\Adminhtml\Order\View\CustomContent</argument>-->
-<!--                </arguments>-->
-<!--            </block>-->
-<!--        </referenceBlock>-->
-
         <referenceBlock name="order_additional_info">
             <block class="RightpointAssignment\SalesOrderAdminCustamization\Block\Adminhtml\Order\View\ShowFields" name="sales_custom_view" template="RightpointAssignment_SalesOrderAdminCustamization::order/view/view.phtml" ifconfig="sales/general/additional_detail"/>
         </referenceBlock>

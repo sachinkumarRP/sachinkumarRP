@@ -6,10 +6,9 @@ use Magento\Backend\App\Action\Context;
 use Magento\Framework\View\Result\PageFactory;
 use RightpointAssignment\SalesOrderAdminCustamization\Model\AddistionalDetailFactory;
 use Magento\Framework\Controller\ResultFactory;
-use Magento\Backend\App\Action;
-use Magento\Framework\App\Action\HttpPostActionInterface;
+use Magento\Framework\App\Action\Action;
 
-class SubmitOnclick extends Action implements HttpPostActionInterface
+class SubmitOnclick extends \Magento\Backend\App\Action implements \Magento\Framework\App\Action\HttpPostActionInterface
 {
     /**
      * @var PageFactory

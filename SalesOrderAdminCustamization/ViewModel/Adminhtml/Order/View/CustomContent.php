@@ -10,42 +10,24 @@ use Rightpoint\Test\Helper\Data;
 
 class CustomContent implements ArgumentInterface
 {
-    /**
-     * @var CollectionFactory
-     */
     public $collection;
 
-    /**
-     * @param Context $context
-     * @param CollectionFactory $collectionFactory
-     */
-    public function __construct(
-        Context $context,
-        CollectionFactory $collectionFactory
-    ) {
+    public function __construct(Context $context, CollectionFactory $collectionFactory)
+    {
         $this->collection = $collectionFactory;
     }
 
-    /**
-     * @return string
-     */
     public function getOrderCustom()
     {
         $data = "Basic Information";
         return $data;
     }
 
-    /**
-     * @return mixed
-     */
     public function getCollection()
     {
         return $this->collection->create();
     }
 
-    /**
-     * @return mixed
-     */
     public function getFormAction()
     {
         return $this->getUrl('adminadditionalinfo/formcontroller/submitonclick');
