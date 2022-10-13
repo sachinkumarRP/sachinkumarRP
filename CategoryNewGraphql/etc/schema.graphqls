@@ -1,0 +1,41 @@
+type Query {
+    categoryresult: [AllCategoryData] @resolver(class:"\\RightpointAssignment\\CategoryNewGraphql\\Model\\Resolver\\Categories") @doc(description:"The category query returns information about a customer") @cache(cacheable: false)
+}
+type AllCategoryData @doc(description: "AllCategory defines the customer name and other details") {
+    entity_id: Int!
+    name: String!
+    level: String!
+    url_key: String!
+    children_count:Int!
+    product_count:Int!
+    children_category_second_level: [children_d] @resolver(class:"\\RightpointAssignment\\CategoryNewGraphql\\Model\\Resolver\\ChildCategoryData") @doc(description:"The category query returns information about a customer")
+}
+type children_d @doc(description: "AllCategory defines the customer name and other details")
+{
+    entity_id: Int!
+    name: String!
+    level: String!
+    url_key: String!
+    children_count:Int!
+    product_count:Int!
+    children_category_third_level: [children_sub_cat_d] @resolver(class:"\\RightpointAssignment\\CategoryNewGraphql\\Model\\Resolver\\ChildSubCategory") @doc(description:"The category query returns information about a customer")
+}
+type children_sub_cat_d @doc(description: "AllCategory defines the customer name and other details")
+{
+    entity_id: Int!
+    name: String!
+    level: String!
+    url_key: String!
+    children_count:Int!
+    product_count:Int!
+    children_category_fouth_level: [children_sub_cat_data_level_four] @resolver(class:"\\RightpointAssignment\\CategoryNewGraphql\\Model\\Resolver\\ChildSubCategoryLevelFour") @doc(description:"The category query returns information about a customer")
+}
+type children_sub_cat_data_level_four @doc(description: "AllCategory defines the customer name and other details")
+{
+    entity_id: Int!
+    name: String!
+    level: String!
+    url_key: String!
+    children_count:Int!
+    product_count:Int!
+}
