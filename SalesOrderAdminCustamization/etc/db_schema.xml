@@ -1,0 +1,13 @@
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="shipping_information">
+        <column xsi:type="int" name="entity_id" identity="true" padding="10" unsigned="true" nullable="false" comment="Entity Id"/>
+        <column xsi:type="varchar" name="shipping_method" nullable="false" length="255" comment="Shipping Method"/>
+        <column xsi:type="varchar" name="merchant_note" nullable="false" length="255" comment="Merchant Note"/>
+        <column xsi:type="datetime" name="shipping_date" on_update="false" nullable="true" comment="Shipping Date"/>
+        <column xsi:type="timestamp" name="created_at" default="CURRENT_TIMESTAMP"  comment="Created At"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="entity_id"/>
+        </constraint>
+    </table>
+</schema>

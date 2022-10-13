@@ -1,0 +1,60 @@
+<?php
+/**
+ * @var $block \RightpointAssignment\SalesOrderAdminCustamization\Block\Adminhtml\Order\View
+ */
+//$viewModel = $block->getData('view_model');
+?>
+<div class="admin__page-section-item order-custom-information">
+    <div class="admin__page-section-item-title">
+        <span class="title">Additional Details</span>
+    </div>
+    <hr>
+    <div class="admin__page-section-item-content">
+        <b><div class="order-custom-information-title"><?= $block->getOrderCustom() ?></div></b>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-8">
+        <form name="addData" method="post" id="addData" class="form"
+              action="<?= $block->getFormAction();?>"
+              data-hasrequired="<?= $block->escapeHtmlAttr(__('*Required Fields')) ?>"
+              data-mage-init='{"validation":{}}'>
+            <input name="form_key" type="hidden" value="<?php echo $block->getFormKey();?>">
+            <fieldset class="fieldset">
+                <fieldset class="fieldset row">
+                    <div class="fields col-md-6">
+                        <div class="field name required">
+                            <label class="label" for="title"><span><?= $block->
+                                    escapeHtmlAttr(__('Shipping Method')) ?></span></label>
+                            <div class="control">
+                                <input name="shipping_method" id="shipping_method" title="Shipping Method" value="" class="input-text" type="text"
+                                       data-validate="{required:true, 'validate-alphanum-with-spaces':true}">
+                            </div>
+                        </div>
+                        <div class="field name required">
+                            <label class="label" for="title"><span><?= $block->
+                                    escapeHtmlAttr(__('Merchant Note')) ?></span></label>
+                            <div class="control">
+                                <input name="merchant_note" id="merchant_note" title="Merchant Note" value="" class="input-text" type="text"
+                                       data-validate="{required:true}">
+                            </div>
+                        </div>
+                        <div class="field name required">
+                            <label class="label" for="title"><span><?= $block->escapeHtmlAttr(__('Shipping Date')) ?></span></label>
+                            <div class="control">
+                                <input name="shipping_date" id="shipping_date" title="Shipping Date" value="" class="input-text"
+                                       type="date" data-validate="{required:true}">
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </fieldset>
+            <div class="actions-toolbar">
+                <div class="primary">
+                    <button type="submit" class="action submit primary" title="Save"><span><?= $block->
+                            escapeHtmlAttr(__('Submit')) ?></span></button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
