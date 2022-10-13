@@ -1,0 +1,20 @@
+type Mutation {
+  createCutomer(input: PickUpCutomerInput!): PickUpCutomerOutput
+    @resolver(
+      class: "\\RightpointAssignment\\CustomerInputGraphql\\Model\\Resolver\\CustomerAddDb"
+    )
+    @doc(description: "Create a new pickup store")
+}
+
+type PickUpCutomerOutput {
+     id: Int
+     name: String
+     email: String
+     phone_number: String
+}
+
+input PickUpCutomerInput {
+      name: String! @doc(description: "The Cutomer Name")
+      email: String! @doc(description: "The Customer EmailID")
+      phone_number: String! @doc(description: "The Customer PhoneNumber")
+}
