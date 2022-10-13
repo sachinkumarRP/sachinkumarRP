@@ -1,0 +1,9 @@
+type Query {
+    allcustomcustomer: [AllCustomcustomer] @resolver(class:"\\RightpointAssignment\\CustomCustomerGraphql\\Model\\Resolver\\AllCustomerFetch") @doc(description:"The allcustomer query returns information about a customer") @cache(cacheable: false)
+}
+type AllCustomcustomer @doc(description: "AllCustomcustomer defines the customer name and other details") {
+    id: Int
+    email: String
+    name: String
+    phone_number: String
+}
